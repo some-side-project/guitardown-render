@@ -1,0 +1,25 @@
+<div class="guitar-tab-root-wrap">
+  <div class="header">
+    <div class="title">
+      <img :src="basicLogo" />
+      <h2>{{guitarDown.json.title}}</h2>
+    </div>
+    <div class="meta-info">
+      <span>速度：{{guitarDown.json.speed}}</span>
+    </div>
+  </div>
+  <div class="main-content">
+    <ul class="tab-list">
+      <li class="line" v-for="(line, index) in piecesArr">
+        <div class="piece" class="tab-line" v-for="(piece, i) in line" :key="i">
+          {{piece}}
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="source-gd">
+    <h4>原始 guitarDown</h4>
+    <div>{{guitarDown.source.trim()}}</div>
+  </div>
+  <div class="footer"></div>
+</div>
