@@ -2,7 +2,7 @@
 
 设计一种 GuitarDown 格式的记谱方法（简称 GD），并实现一种 GD 谱的渲染器。
 
-![](https://img.cuiyongjian.com/blog/202502280422385.png)
+<img width="150" src="https://img.cuiyongjian.com/blog/202502280422385.png"/>
 
 ## jssdk api
 
