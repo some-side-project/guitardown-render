@@ -5,7 +5,7 @@ export default {
       "@babel/preset-env",
       {
         useBuiltIns: false, // polyfill 就交给宿主环境得了。
-        corejs: 3,
+        // corejs: 3,
       },
     ],
   ],

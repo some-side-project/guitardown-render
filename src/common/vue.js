@@ -1,16 +1,14 @@
-let VueCache = window.Vue || null;
+import externalVue from "vue";
 
 export async function resolveVue() {
-  if (!VueCache && !resolveVue.resolvePromising) {
+  if (!externalVue && !resolveVue.resolvePromising) {
     resolveVue.resolvePromising = import("vue/dist/vue.esm-bundler.js").then(
       (Vue) => {
-        VueCache = Vue;
-        return VueCache;
+        externalVue = Vue;
+        return externalVue;
       }
     );
     return resolveVue.resolvePromising;
   }
-  return VueCache || resolvePromising;
+  return externalVue || resolvePromising;
 }
-
-export default VueCache;

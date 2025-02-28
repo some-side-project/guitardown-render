@@ -8,11 +8,22 @@ export default {
   // mode: "none",
   entry: "./src/main.js", // 打包入口地址
   output: {
-    filename: "guitar-[name]-[hash:8].js", // 输出文件名
+    filename: "guitar-[name]-[fullhash:8].js", // 输出文件名
     path: path.join(import.meta.dirname, "dist"), // 输出文件目录
+    libraryTarget: "umd",
+    globalObject: "this",
+    library: "GdRender",
   },
   resolve: {
     extensions: [".js", ".json", ".wasm"],
+  },
+  externals: {
+    vue: {
+      module: "vue",
+      commonjs2: "vue",
+      commonjs: "vue",
+      root: "Vue", // indicates global variable
+    },
   },
   devtool: "cheap-module-source-map", // 平衡可读性和构建速度
   module: {
@@ -80,7 +91,7 @@ export default {
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: "guitar-[name].[hash:8].css",
+      filename: "guitar-[name].[fullhash:8].css",
     }),
     // https://vuejs.org/api/compile-time-flags.html#configuration-guides
     new webpack.DefinePlugin({

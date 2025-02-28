@@ -16,5 +16,14 @@
   <body>
     <h1>吉他谱展示</h1>
     <div class="render-ele"></div>
+    <script>
+      document.addEventListener(
+        "DOMContentLoaded",
+        () => {
+          window.GdRender.render(document.querySelector(".render-ele"));
+        },
+        false
+      );
+    </script>
   </body>
 </html>

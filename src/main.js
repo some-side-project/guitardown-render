@@ -1,5 +1,3 @@
-import renderTab from "./render.js";
+import renderGd from "./render.js";
 
-console.log("主入口执行");
-
-renderTab(document.querySelector(".render-ele"));
+export { renderGd as render };
